@@ -5,16 +5,19 @@
 
 <web-app>
 
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>rq.restygwt.template.server.GreetingServiceImpl</servlet-class>
-  </servlet>
+  	<filter>
+		<filter-name>guiceFilter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
 
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/Template/greet</url-pattern>
-  </servlet-mapping>
+	<filter-mapping>
+		<filter-name>guiceFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>rq.restygwt.template.server.GuiceServletConfig</listener-class>
+	</listener>
 
   <!-- Default page to serve -->
   <welcome-file-list>

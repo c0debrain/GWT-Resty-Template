@@ -13,14 +13,56 @@
   <name>GWT Maven Archetype</name>
 
   <properties>
-    <!-- Convenience property to set the GWT version -->
     <gwtVersion>2.5.1</gwtVersion>
+    <resty.version>1.4-SNAPSHOT</resty.version>
+    <jersey.version>1.17</jersey.version>
+    <guice.version>3.0</guice.version>
+    <gin.version>2.0.0</gin.version>
     <!-- GWT needs at least java 1.5 -->
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <guice.version>3.0</guice.version>
   </properties>
 
   <dependencies>
+  <!-- Injection -->
+      <dependency>
+         <groupId>com.google.inject</groupId>
+         <artifactId>guice</artifactId>
+         <version>${guice.version}</version>
+         <scope>compile</scope>
+      </dependency>
+      <dependency>
+         <groupId>com.google.inject.extensions</groupId>
+         <artifactId>guice-servlet</artifactId>
+         <version>${guice.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.jersey.contribs</groupId>
+         <artifactId>jersey-guice</artifactId>
+         <version>${jersey.version}</version>
+      </dependency>
+      <!-- REST Communication -->
+      <dependency>
+         <groupId>com.sun.jersey</groupId>
+         <artifactId>jersey-server</artifactId>
+         <version>${jersey.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.jersey</groupId>
+         <artifactId>jersey-servlet</artifactId>
+         <version>${jersey.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.sun.jersey</groupId>
+         <artifactId>jersey-json</artifactId>
+         <version>${jersey.version}</version>
+      </dependency>
+	  <dependency>
+         <groupId>org.fusesource.restygwt</groupId>
+         <artifactId>restygwt</artifactId>
+         <version>${resty.version}</version>
+      </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
@@ -32,12 +74,6 @@
       <artifactId>gwt-user</artifactId>
       <version>${gwtVersion}</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.7</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>javax.validation</groupId>
@@ -111,6 +147,37 @@
         </configuration>
       </plugin>
     </plugins>
+     <pluginManagement>
+         <plugins>
+            <!--This plugin's configuration is used to store Eclipse m2e settings
+					only. It has no influence on the Maven build itself. -->
+            <plugin>
+               <groupId>org.eclipse.m2e</groupId>
+               <artifactId>lifecycle-mapping</artifactId>
+               <version>1.0.0</version>
+               <configuration>
+                  <lifecycleMappingMetadata>
+                     <pluginExecutions>
+                        <pluginExecution>
+                           <pluginExecutionFilter>
+                              <groupId>org.codehaus.mojo</groupId>
+                              <artifactId>gwt-maven-plugin</artifactId>
+                              <versionRange>[2.4.0,)</versionRange>
+                              <goals>
+                                 <goal>generateAsync</goal>
+                                 <goal>i18n</goal>
+                              </goals>
+                           </pluginExecutionFilter>
+                           <action>
+                              <ignore/>
+                           </action>
+                        </pluginExecution>
+                     </pluginExecutions>
+                  </lifecycleMappingMetadata>
+               </configuration>
+            </plugin>
+         </plugins>
+      </pluginManagement>
   </build>
 
 </project>

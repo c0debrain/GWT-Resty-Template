@@ -15,7 +15,8 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
-
+  <inherits name='org.fusesource.restygwt.RestyGWT'/><!-- RestyGWT -->
+ 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='rq.restygwt.template.client.Template' />
 
