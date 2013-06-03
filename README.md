@@ -30,4 +30,5 @@ Import the project as an existing maven project. The pom is located under GWT-Re
 Using Maven
 -----------
 mvn clean package
+
 mvn gwt:run
