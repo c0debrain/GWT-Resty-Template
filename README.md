@@ -17,3 +17,17 @@ Server
   + Guice
   + Jersey 1.17 (JAX-RS)
   
+How to use
+==================
+Fork it.
+
+Clone it.
+
+Using eclipse
+-------------
+Import the project as an existing maven project. The pom is located under GWT-Resty-Template\template\rq.restygwt.template
+
+Using Maven
+-----------
+mvn clean package
+mvn gwt:run
