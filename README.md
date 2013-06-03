@@ -1,4 +1,12 @@
 GWT-Resty-Template
 ==================
 
-A Template of an MVP + Activities-Places + GIN + Resty project.
+A Template using 
+
+Client :
+  RestyGWT 
+
+Server :
+  Guice
+  Jersey 1.17 (JAX-RS)
+  
