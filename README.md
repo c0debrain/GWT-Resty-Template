@@ -5,7 +5,7 @@ A GWT maven template using the following libs. Feel free to fork !!! Any comment
 
 This template uses resty to geneate a REST client service and call the server using a GET request. 
 
-The server uses Jersey + Guice to handle resources and send back response as Json messages.
+The server uses Jersey + Guice to handle resources and send back responses as Json messages.
 
 
 Client
