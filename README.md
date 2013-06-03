@@ -1,12 +1,14 @@
 GWT-Resty-Template
 ==================
 
-A Template using 
+A GWT maven template using the following libs. Feel free to fork !!! Any comment will be be appreciated. 
 
-Client :
-  RestyGWT 
+Client
+-------
+  + RestyGWT 
 
-Server :
-  Guice
-  Jersey 1.17 (JAX-RS)
+Server
+--------
+  + Guice
+  + Jersey 1.17 (JAX-RS)
   
